@@ -4,7 +4,9 @@ You always wanted a circualr action menu for your web application? I created one
 
 Here is a small How-To on how you can use the action menu in your own project.
 
-## Setup
+![](https://github.com/willybaer/circular_action_menu/blob/main/example.gif)
+
+## HowTo
 The CircualActionMenu class requires a canvas element where the drawing process happens. So first add a canvas element to your html and then fetch the reference of the canvas element, so you can pass it to the CircularActionMenu class.
 
 ```
