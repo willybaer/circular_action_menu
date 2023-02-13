@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <script src="circularActionMenu.js"></script>
+  <style>
+    .ImageButton {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      background-color: #393D4C00;
+      border: none;
+      padding: 0;
+    }
+
+    .ImageButton:hover {
+      background-color: #C4C4C4;
+      cursor: pointer;
+    }
+
+    .ImageButton.Disabled:hover {
+      background-color: unset !important;
+      cursor: unset !important;
+    }
+
+    .ImageButton img {
+      padding: 10px;
+      width: 20px;
+      height: 20px;
+    }
+
+    .ImageButton-big {
+      width: 50px !important;
+      height: 50px !important;
+    }
+
+    .ImageButton-big img {
+      padding: 10px;
+      width: 25px !important;
+      height: 25px !important;
+    }
+
+    .ImageButton-small {
+      width: 30px !important;
+      height: 30px !important;
+    }
+
+    .ImageButton-small img {
+      padding: 7px;
+      width: 15px !important;
+      height: 15px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="ImageButton" id="test" onclick="toggleMenu()" style="margin: 100px 100px">
+    <img src="menu.svg">
+  </button>
+
+  <canvas></canvas>
+
+  <script>
+    const toggleMenu = () => {
+      menu.withTargetElement(element).toggle();
+    }
+
+    const element = document.querySelector('#test');
+    const canvas = document.querySelector('canvas');
+
+    let menu = new CircularActionMenu([
+      { src: 'first.svg', color: '#757575' },
+      { src: 'second.svg', color: '#2196f3' },
+      { src: 'third.svg', color: '#757575' },
+    ], 20, canvas)
+      .withClickListener((index) => console.log(index));
+
+  </script>
+</body>
+
+</html>
